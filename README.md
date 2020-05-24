@@ -6,6 +6,7 @@ face is the image of the face for which we need to find the embedding
 ```
 from tensorflow.keras.models import load_model
 import tensorflow as tf
+import cv2
 model = load_model('facenet3.7.h5',custom_objects={"tf": tf})
 face=cv2.resize(face, (96,96), interpolation = cv2.INTER_AREA)
 img = face[...,::-1]
